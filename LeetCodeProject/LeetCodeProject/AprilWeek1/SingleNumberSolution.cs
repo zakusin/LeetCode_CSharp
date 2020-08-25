@@ -22,8 +22,24 @@ namespace LeetCodeProject.AprilWeek1
     {
         public int SingleNumber(int[] nums)
         {
+            // Normal Linq groupby solution
             var singleNumber = nums.GroupBy(r => r).Where(x => x.Count() == 1).Select(r => r.Key).First();
             return singleNumber;
+        }
+
+        /// <summary>
+        /// reference by LeetCode Approach 4
+        /// </summary>
+        public int SingleNumber_XOR(int[] nums)
+        {
+            // XOR solution
+            var solution = 0;
+            foreach (var num in nums)
+            {
+                solution ^= num;
+            }
+
+            return solution;
         }
     }
 }
