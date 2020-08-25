@@ -1,0 +1,1 @@
+## Start Leet Code Day1
